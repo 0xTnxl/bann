@@ -15,7 +15,17 @@ export const metadata: Metadata = {
   description:
     "Faith-driven streetwear for those who refuse to perform their faith or commodify their conviction. Vault & Vice collection available now.",
   keywords: ["streetwear", "faith", "fashion", "BANN", "vault", "vice", "brutalist"],
-    generator: 'v0.app'
+  generator: 'v0.app',
+  icons: {
+    icon: '/icon.jpg',
+    apple: '/apple-icon.jpg',
+  },
+  openGraph: {
+    title: "BANN | From the Vault... For the Vice",
+    description: "Faith-driven streetwear for those who refuse to perform their faith or commodify their conviction.",
+    siteName: "BANN",
+    type: "website",
+  },
 }
 
 export default function RootLayout({
