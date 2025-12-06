@@ -9,37 +9,37 @@ interface LookbookGalleryProps {
 const images = [
   {
     id: 1,
-    src: "/images/whatsapp-20image-202025-12-06-20at-201.jpeg",
+    src: "/images/shoot-1.jpeg",
     alt: "Model seated on pavement wearing BANN cap and VAULT&VICE raglan tee",
   },
   {
     id: 2,
-    src: "/images/whatsapp-20image-202025-12-06-20at-201.jpeg",
+    src: "/images/shoot-2.jpeg",
     alt: "Close-up of VAULT&VICE raglan tee with camera necklace",
   },
   {
     id: 3,
-    src: "/images/whatsapp-20image-202025-12-06-20at-201.jpeg",
+    src: "/images/shoot-3.jpeg",
     alt: "Two models behind chain-link fence wearing VAULT&VICE tees",
   },
   {
     id: 4,
-    src: "/images/whatsapp-20image-202025-12-06-20at-201.jpeg",
-    alt: "Group wearing traditional knit caps and VAULT&VICE raglan tees",
-  },
-  {
-    id: 5,
-    src: "/images/whatsapp-20image-202025-12-06-20at-201.jpeg",
+    src: "/images/shoot-5.jpeg",
     alt: "Model in VAULT&VICE black and white raglan with cap",
   },
   {
-    id: 6,
-    src: "/images/whatsapp-20image-202025-12-06-20at-201.jpeg",
+    id: 5,
+    src: "/images/shoot-6.jpeg",
     alt: "Two models wearing VAULT&VICE tees and BANN caps against sky",
   },
   {
+    id: 6,
+    src: "/images/shoot-7.jpeg",
+    alt: "Two models in traditional knit caps wearing VAULT&VICE raglan tees",
+  },
+  {
     id: 7,
-    src: "/images/whatsapp-20image-202025-12-06-20at-201.jpeg",
+    src: "/images/shoot-8.jpeg",
     alt: "Two models in traditional knit caps wearing VAULT&VICE raglan tees",
   },
 ]

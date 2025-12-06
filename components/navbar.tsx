@@ -56,16 +56,16 @@ export function Navbar() {
                 <Button
                   variant="outline"
                   onClick={logout}
-                  className="border-border hover:bg-accent hover:text-accent-foreground bg-transparent"
+                  className="border-border hover:bg-accent hover:text-accent-foreground bg-transparent glitch-button"
                 >
-                  Logout
+                  <span className="hover-glitch inline-block">Logout</span>
                 </Button>
               ) : (
                 <Button
                   onClick={() => setShowAuthModal(true)}
-                  className="bg-foreground text-background hover:bg-foreground/90"
+                  className="bg-foreground text-background hover:bg-foreground/90 glitch-button"
                 >
-                  Login / Signup
+                  <span className="hover-glitch inline-block">Login / Signup</span>
                 </Button>
               )}
             </div>
@@ -102,9 +102,9 @@ export function Navbar() {
                     logout()
                     setIsOpen(false)
                   }}
-                  className="w-full border-border"
+                  className="w-full border-border glitch-button"
                 >
-                  Logout
+                  <span className="hover-glitch inline-block">Logout</span>
                 </Button>
               ) : (
                 <Button
@@ -112,9 +112,9 @@ export function Navbar() {
                     setShowAuthModal(true)
                     setIsOpen(false)
                   }}
-                  className="w-full bg-foreground text-background"
+                  className="w-full bg-foreground text-background glitch-button"
                 >
-                  Login / Signup
+                  <span className="hover-glitch inline-block">Login / Signup</span>
                 </Button>
               )}
             </div>

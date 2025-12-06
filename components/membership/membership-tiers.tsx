@@ -1,5 +1,23 @@
+"use client"
+
 import { Check, Crown, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
+function AnimatedWord({ word, className = "" }: { word: string; className?: string }) {
+  return (
+    <span className={`inline-block ${className}`}>
+      {word.split("").map((letter, index) => (
+        <span
+          key={index}
+          className="letter-hover inline-block transition-all duration-200 hover:text-accent"
+          style={{ transitionDelay: `${index * 20}ms` }}
+        >
+          {letter === " " ? "\u00A0" : letter}
+        </span>
+      ))}
+    </span>
+  )
+}
 
 const tiers = [
   {
@@ -61,14 +79,14 @@ export function MembershipTiers() {
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className={`relative bg-card border p-6 transition-all hover:scale-[1.02] ${
+              className={`glitch-card relative bg-card border p-6 transition-all hover:scale-[1.02] ${
                 tier.highlighted ? "border-accent shadow-lg shadow-accent/10" : "border-border"
               }`}
             >
               {/* Badge */}
               {tier.badge && (
                 <div
-                  className={`absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 text-xs font-bold flex items-center gap-1 ${
+                  className={`absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 text-xs font-bold flex items-center gap-1 hover-glitch ${
                     tier.badge === "PREMIUM" ? "bg-yellow-500 text-black" : "bg-accent text-accent-foreground"
                   }`}
                 >
@@ -79,34 +97,38 @@ export function MembershipTiers() {
 
               {/* Header */}
               <div className="text-center mb-6 pt-4">
-                <h3 className="text-xl font-black mb-2">{tier.name}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{tier.tagline}</p>
+                <h3 className="text-xl font-black mb-2 hover-glitch inline-block">
+                  <AnimatedWord word={tier.name} />
+                </h3>
+                <p className="text-muted-foreground text-sm mb-4 hover-shake inline-block">{tier.tagline}</p>
                 <div className="mb-2">
-                  <span className="text-3xl font-black">{tier.price}</span>
+                  <span className="text-3xl font-black hover-glitch inline-block">
+                    <AnimatedWord word={tier.price} />
+                  </span>
                   <span className="text-muted-foreground text-sm ml-2">({tier.priceUsd})</span>
                 </div>
-                <p className="text-sm text-muted-foreground">{tier.period}</p>
+                <p className="text-sm text-muted-foreground hover-shake inline-block">{tier.period}</p>
               </div>
 
               {/* Benefits */}
               <ul className="space-y-3 mb-6">
                 {tier.benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm">
-                    <Check size={16} className="text-accent shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{benefit}</span>
+                  <li key={index} className="flex items-start gap-2 text-sm group">
+                    <Check size={16} className="text-accent shrink-0 mt-0.5 group-hover:animate-pulse" />
+                    <span className="text-muted-foreground hover-shake inline-block cursor-pointer">{benefit}</span>
                   </li>
                 ))}
               </ul>
 
               {/* CTA */}
               <Button
-                className={`w-full font-bold ${
+                className={`w-full font-bold glitch-button ${
                   tier.highlighted
                     ? "bg-accent text-accent-foreground hover:bg-accent/90"
                     : "bg-foreground text-background hover:bg-foreground/90"
                 }`}
               >
-                Join Now
+                <span className="hover-glitch inline-block">Join Now</span>
               </Button>
             </div>
           ))}

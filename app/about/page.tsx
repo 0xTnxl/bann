@@ -1,4 +1,22 @@
+"use client"
+
 import { GraffitiBackground } from "@/components/graffiti-background"
+
+function AnimatedWord({ word, className = "" }: { word: string; className?: string }) {
+  return (
+    <span className={`inline-block ${className}`}>
+      {word.split("").map((letter, index) => (
+        <span
+          key={index}
+          className="letter-hover inline-block transition-all duration-200 hover:text-accent"
+          style={{ transitionDelay: `${index * 20}ms` }}
+        >
+          {letter === " " ? "\u00A0" : letter}
+        </span>
+      ))}
+    </span>
+  )
+}
 
 export default function AboutPage() {
   return (
@@ -9,9 +27,22 @@ export default function AboutPage() {
         {/* Hero */}
         <div className="mb-16">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-8 text-balance">
-            In the beginning
+            <span className="hover-shake">
+              <AnimatedWord word="In" />
+            </span>{" "}
+            <span className="hover-shake">
+              <AnimatedWord word="the" />
+            </span>{" "}
+            <span className="hover-glitch">
+              <AnimatedWord word="beginning" />
+            </span>
             <br />
-            <span className="text-accent">was bann.</span>
+            <span className="hover-spray text-accent">
+              <AnimatedWord word="was" className="text-accent" />
+            </span>{" "}
+            <span className="hover-glitch text-accent inline-block hover:scale-110 transition-transform duration-300">
+              <AnimatedWord word="bann." className="text-accent" />
+            </span>
           </h1>
         </div>
 
@@ -55,9 +86,36 @@ export default function AboutPage() {
           </p>
 
           <p className="text-2xl text-foreground font-black pt-8">
-            Welcome to BANN.
+            <span className="hover-glitch inline-block">
+              <AnimatedWord word="Welcome" />
+            </span>{" "}
+            <span className="hover-shake inline-block">
+              <AnimatedWord word="to" />
+            </span>{" "}
+            <span className="hover-glitch inline-block hover:scale-110 transition-transform duration-300">
+              <AnimatedWord word="BANN." />
+            </span>
             <br />
-            <span className="text-accent">From the vault... for the vice.</span>
+            <span className="text-accent">
+              <span className="hover-spray inline-block">
+                <AnimatedWord word="From" className="text-accent" />
+              </span>{" "}
+              <span className="hover-shake inline-block">
+                <AnimatedWord word="the" className="text-accent" />
+              </span>{" "}
+              <span className="hover-glitch inline-block">
+                <AnimatedWord word="vault..." className="text-accent" />
+              </span>{" "}
+              <span className="hover-shake inline-block">
+                <AnimatedWord word="for" className="text-accent" />
+              </span>{" "}
+              <span className="hover-shake inline-block">
+                <AnimatedWord word="the" className="text-accent" />
+              </span>{" "}
+              <span className="hover-glitch inline-block hover:scale-110 transition-transform duration-300">
+                <AnimatedWord word="vice." className="text-accent" />
+              </span>
+            </span>
           </p>
         </div>
       </div>
